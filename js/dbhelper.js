@@ -11,7 +11,8 @@ class DBHelper {
     // const port = 8000 // Change this to your server port
     // return `http://localhost:${port}/data/restaurants.json`;
     // const port = 8887
-    return `http://127.0.0.1:8887/data/restaurants.json`;
+    // return `http://127.0.0.1:8887/data/restaurants.json`;
+    return `https://praneethvalameti93.github.io/restaurant-stage-1/restaurants.json`;
   }
 
   /**
