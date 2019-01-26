@@ -1,7 +1,7 @@
 // the fallowing variable is used to store the name of the version
 var CACHE_NAME = 'vr1';
 this.addEventListener('install', event => {
-  // waituntil is used to wait untill files cache in the cache
+  // waituntil is used to wait untill files store in the cache
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
       cache.addAll(
