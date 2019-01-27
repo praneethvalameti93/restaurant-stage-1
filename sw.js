@@ -30,6 +30,25 @@ this.addEventListener('install', event => {
   )
 });
 
+self.addEventListener('activate', function(event) {
+
+  var listCache = ['pages-cache-v1', 'blog-posts-cache-v1'];
+  console.log("Service Worker activated");
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.map(function(cacheName) {
+          if (listCache.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+            // console.log("deleted");
+          }
+        })
+      );
+    })
+  );
+});
+
+
 // fetch is used to data from the cache and also clone the data and store in cache
 this.addEventListener('fetch', event => {
   event.respondWith(
